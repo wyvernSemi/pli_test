@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="awc" version="2">
+	<waveform>
+		<datasets>
+			<dataset alias="sim" file="dataset.asdb" id="0" uniqueid="1677907690014"/>
+		</datasets>
+		<browser type="events"/>
+		<view active="true">
+			<cursors>
+				<cursor name="Default cursor" id="-1" time="0fs+0" lock="0" tip="1"/>
+				<active name="Default cursor" time="0fs+0"/>
+			</cursors>
+			<signalspart>
+				<signal name="/tb/clk" aliasid="0"/>
+				<signal name="/tb/rst_n" aliasid="0"/>
+				<viewmode value="namedrow"/>
+				<expand value="1"/>
+				<group name="avsvproc csr bus">
+					<viewmode value=""/>
+					<expand value=""/>
+					<signal name="/tb/avs_csr_address" aliasid="0"/>
+					<signal name="/tb/avs_csr_write" aliasid="0"/>
+					<signal name="/tb/avs_csr_writedata" aliasid="0"/>
+					<signal name="/tb/avs_csr_read" aliasid="0"/>
+					<signal name="/tb/avs_csr_readdata" aliasid="0"/>
+				</group>
+				<viewmode value="namedrow"/>
+				<group name="uut">
+					<viewmode value=""/>
+					<signal name="/tb/uut_inst/clk" aliasid="0"/>
+					<signal name="/tb/uut_inst/rst_n" aliasid="0"/>
+					<signal name="/tb/uut_inst/avs_csr_address" aliasid="0"/>
+					<signal name="/tb/uut_inst/avs_csr_write" aliasid="0"/>
+					<signal name="/tb/uut_inst/avs_csr_writedata" aliasid="0"/>
+					<signal name="/tb/uut_inst/avs_csr_read" aliasid="0"/>
+					<signal name="/tb/uut_inst/avs_csr_readdata" aliasid="0"/>
+					<signal name="/tb/uut_inst/avm_rx_waitrequest" aliasid="0"/>
+					<integral_representation value="DecimalUnsigned"/>
+					<signal name="/tb/uut_inst/avm_rx_burstcount" aliasid="0"/>
+					<integral_representation value=""/>
+					<signal name="/tb/uut_inst/avm_rx_address" aliasid="0"/>
+					<signal name="/tb/uut_inst/avm_rx_read" aliasid="0"/>
+					<signal name="/tb/uut_inst/avm_rx_readdata" aliasid="0"/>
+					<signal name="/tb/uut_inst/avm_rx_readdatavalid" aliasid="0"/>
+					<signal name="/tb/uut_inst/avm_tx_waitrequest" aliasid="0"/>
+					<integral_representation value="DecimalUnsigned"/>
+					<signal name="/tb/uut_inst/avm_tx_burstcount" aliasid="0"/>
+					<integral_representation value=""/>
+					<signal name="/tb/uut_inst/avm_tx_address" aliasid="0"/>
+					<signal name="/tb/uut_inst/avm_tx_write" aliasid="0"/>
+					<signal name="/tb/uut_inst/avm_tx_writedata" aliasid="0"/>
+					<integral_representation value="DecimalUnsigned"/>
+					<signal name="/tb/uut_inst/length" aliasid="0"/>
+					<integral_representation value=""/>
+					<signal name="/tb/uut_inst/baseaddr" aliasid="0"/>
+					<signal name="/tb/uut_inst/startwr" aliasid="0"/>
+					<signal name="/tb/uut_inst/startrd" aliasid="0"/>
+					<signal name="/tb/uut_inst/clrerr" aliasid="0"/>
+					<signal name="/tb/uut_inst/busy" aliasid="0"/>
+					<signal name="/tb/uut_inst/rnw" aliasid="0"/>
+					<signal name="/tb/uut_inst/error" aliasid="0"/>
+					<signal name="/tb/uut_inst/count" aliasid="0"/>
+					<signal name="/tb/uut_inst/mem" aliasid="0"/>
+					<signal name="/tb/uut_inst/memaddr" aliasid="0"/>
+				</group>
+				<viewmode value="namedrow"/>
+				<group name="mem_model">
+					<viewmode value=""/>
+					<signal name="/tb/mem_model_inst/clk" aliasid="0"/>
+					<signal name="/tb/mem_model_inst/rst_n" aliasid="0"/>
+					<signal name="/tb/mem_model_inst/address" aliasid="0"/>
+					<signal name="/tb/mem_model_inst/write" aliasid="0"/>
+					<signal name="/tb/mem_model_inst/writedata" aliasid="0"/>
+					<signal name="/tb/mem_model_inst/byteenable" aliasid="0"/>
+					<signal name="/tb/mem_model_inst/read" aliasid="0"/>
+					<signal name="/tb/mem_model_inst/readdata" aliasid="0"/>
+					<signal name="/tb/mem_model_inst/readdatavalid" aliasid="0"/>
+					<signal name="/tb/mem_model_inst/rx_waitrequest" aliasid="0"/>
+					<signal name="/tb/mem_model_inst/rx_burstcount" aliasid="0"/>
+					<signal name="/tb/mem_model_inst/rx_address" aliasid="0"/>
+					<signal name="/tb/mem_model_inst/rx_read" aliasid="0"/>
+					<signal name="/tb/mem_model_inst/rx_readdata" aliasid="0"/>
+					<signal name="/tb/mem_model_inst/rx_readdatavalid" aliasid="0"/>
+					<signal name="/tb/mem_model_inst/tx_waitrequest" aliasid="0"/>
+					<signal name="/tb/mem_model_inst/tx_burstcount" aliasid="0"/>
+					<signal name="/tb/mem_model_inst/tx_address" aliasid="0"/>
+					<signal name="/tb/mem_model_inst/tx_write" aliasid="0"/>
+					<signal name="/tb/mem_model_inst/tx_writedata" aliasid="0"/>
+					<signal name="/tb/mem_model_inst/wr_port_valid" aliasid="0"/>
+					<signal name="/tb/mem_model_inst/wr_port_data" aliasid="0"/>
+					<signal name="/tb/mem_model_inst/wr_port_addr" aliasid="0"/>
+					<signal name="/tb/mem_model_inst/rx_count" aliasid="0"/>
+					<signal name="/tb/mem_model_inst/rd_addr" aliasid="0"/>
+					<signal name="/tb/mem_model_inst/tx_count" aliasid="0"/>
+					<signal name="/tb/mem_model_inst/wr_addr" aliasid="0"/>
+					<signal name="/tb/mem_model_inst/readdata_int" aliasid="0"/>
+					<signal name="/tb/mem_model_inst/rx_readdatavalid_int" aliasid="0"/>
+					<signal name="/tb/mem_model_inst/rx_readdata_int" aliasid="0"/>
+					<signal name="/tb/mem_model_inst/rx_waitrequest_int" aliasid="0"/>
+					<signal name="/tb/mem_model_inst/next_rx_waitrequest_int" aliasid="0"/>
+					<signal name="/tb/mem_model_inst/rx_read_q" aliasid="0"/>
+					<signal name="/tb/mem_model_inst/rx_burstcount_q" aliasid="0"/>
+					<signal name="/tb/mem_model_inst/rx_address_q" aliasid="0"/>
+					<signal name="/tb/mem_model_inst/q_full" aliasid="0"/>
+					<signal name="/tb/mem_model_inst/q_empty" aliasid="0"/>
+					<signal name="/tb/mem_model_inst/EN_READ_QUEUE" aliasid="0"/>
+				</group>
+				<viewmode value="namedrow"/>
+				<expand value="1"/>
+				<group name="burst rx bus">
+					<viewmode value=""/>
+					<expand value=""/>
+					<signal name="/tb/avm_rx_address" aliasid="0"/>
+					<signal name="/tb/avm_rx_burstcount" aliasid="0"/>
+					<signal name="/tb/avm_rx_read" aliasid="0"/>
+					<signal name="/tb/avm_rx_readdata" aliasid="0"/>
+					<signal name="/tb/avm_rx_readdatavalid" aliasid="0"/>
+					<signal name="/tb/avm_rx_waitrequest" aliasid="0"/>
+				</group>
+				<viewmode value="namedrow"/>
+				<expand value="1"/>
+				<group name="burst tx bus">
+					<viewmode value=""/>
+					<expand value=""/>
+					<signal name="/tb/avm_tx_address" aliasid="0"/>
+					<signal name="/tb/avm_tx_burstcount" aliasid="0"/>
+					<signal name="/tb/avm_tx_write" aliasid="0"/>
+					<signal name="/tb/avm_tx_writedata" aliasid="0"/>
+					<signal name="/tb/avm_tx_waitrequest" aliasid="0"/>
+				</group>
+				<viewmode value="namedrow"/>
+				<group name="csr bus decode">
+					<viewmode value=""/>
+					<signal name="/tb/avs_csr_write_uut" aliasid="0"/>
+					<signal name="/tb/avs_csr_read_uut" aliasid="0"/>
+					<signal name="/tb/avs_csr_readdata_uut" aliasid="0"/>
+					<signal name="/tb/avs_csr_write_mem" aliasid="0"/>
+					<signal name="/tb/avs_csr_read_mem" aliasid="0"/>
+					<signal name="/tb/avs_csr_readdata_mem" aliasid="0"/>
+					<signal name="/tb/avs_csr_write_tb" aliasid="0"/>
+					<signal name="/tb/avs_csr_read_tb" aliasid="0"/>
+					<signal name="/tb/avs_csr_readdata_tb" aliasid="0"/>
+				</group>
+				<viewmode value="namedrow"/>
+				<group name="tbcontrol">
+					<viewmode value=""/>
+					<signal name="/tb/error" aliasid="0"/>
+					<signal name="/tb/do_stop" aliasid="0"/>
+					<signal name="/tb/do_finish" aliasid="0"/>
+					<signal name="/tb/partial_test" aliasid="0"/>
+					<signal name="/tb/passed" aliasid="0"/>
+					<signal name="/tb/failed" aliasid="0"/>
+					<signal name="/tb/count_vec" aliasid="0"/>
+					<signal name="/tb/timeout" aliasid="0"/>
+				</group>
+				<viewmode value="namedrow"/>
+				<group name="parameters">
+					<integral_representation value="DecimalUnsigned"/>
+					<viewmode value=""/>
+					<signal name="/tb/GUI_RUN" aliasid="0"/>
+					<signal name="/tb/CLK_FREQ_MHZ" aliasid="0"/>
+				</group>
+			</signalspart>
+			<firstvisiblesignal number="0"/>
+			<timesynchronization value="1"/>
+			<cursorssynchronization value="1"/>
+			<time beginvisible="0fs" endvisible="0fs"/>
+		</view>
+		<bookmarks/>
+		<time beginvisible="0fs" endvisible="8880ns"/>
+		<timeunit name="auto"/>
+		<cursors>
+			<cursor name="Default cursor" id="-1" time="8880ns+2" lock="0" tip="1"/>
+			<active name="Default cursor" time="8880ns+2"/>
+		</cursors>
+		<hierarchy_depth value="0"/>
+	</waveform>
+</document>

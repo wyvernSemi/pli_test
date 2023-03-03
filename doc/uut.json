@@ -1,0 +1,65 @@
+[{
+    "ip_name"     : "uut",
+    "bus"         : "csr",
+    "addr_width"  : "5",
+    "description" : "This block is the registers for the UUT ",
+    "registers" : {
+        "control" : {
+            "address"      : "0",
+            "width"        : "15",
+            "description"  : "UUT control register",
+            "fields"       : {
+                "startwr"     : {
+                    "type"        : "w0",
+                    "bit_len"     : "1",
+                    "reset"       : "0",
+                    "description" : "Start write DMA to memory"
+                },
+                "startrd"     : {
+                    "type"        : "w0",
+                    "bit_len"     : "1",
+                    "reset"       : "0",
+                    "description" : "Start read DMA from memory"
+                },
+                "length"     : {
+                    "type"        : "w",
+                    "bit_len"     : "12",
+                    "reset"       : "0",
+                    "description" : "Length of DMA"
+                },
+                "clrerr"     : {
+                    "type"        : "w0",
+                    "bit_len"     : "1",
+                    "reset"       : "0",
+                    "description" : "Clear error state"
+                }
+            }
+        },
+        "status" : {
+            "address"      : "1",
+            "width"        : "2",
+            "description"  : "UUT status register",
+            "fields"       : {
+                "busy"     : {
+                    "type"        : "r",
+                    "bit_len"     : "1",
+                    "reset"       : "0",
+                    "description" : "UUT busy status"
+                },
+                "error"     : {
+                    "type"        : "r",
+                    "bit_len"     : "1",
+                    "reset"       : "0",
+                    "description" : "UUT error status"
+                }
+            }
+        },
+        "baseaddr" : {
+            "address"      : "2",
+            "width"        : "32",
+            "type"         : "w",
+            "reset"        : "0",
+            "description"  : "DMA base address"
+        }
+    }
+}]
