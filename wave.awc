@@ -2,7 +2,7 @@
 <document type="awc" version="2">
 	<waveform>
 		<datasets>
-			<dataset alias="sim" file="dataset.asdb" id="0" uniqueid="1677907690014"/>
+			<dataset alias="sim" file="dataset.asdb" id="0" uniqueid="1678002792459"/>
 		</datasets>
 		<browser type="events"/>
 		<view active="true">
@@ -14,10 +14,8 @@
 				<signal name="/tb/clk" aliasid="0"/>
 				<signal name="/tb/rst_n" aliasid="0"/>
 				<viewmode value="namedrow"/>
-				<expand value="1"/>
 				<group name="avsvproc csr bus">
 					<viewmode value=""/>
-					<expand value=""/>
 					<signal name="/tb/avs_csr_address" aliasid="0"/>
 					<signal name="/tb/avs_csr_write" aliasid="0"/>
 					<signal name="/tb/avs_csr_writedata" aliasid="0"/>
@@ -106,10 +104,8 @@
 					<signal name="/tb/mem_model_inst/EN_READ_QUEUE" aliasid="0"/>
 				</group>
 				<viewmode value="namedrow"/>
-				<expand value="1"/>
 				<group name="burst rx bus">
 					<viewmode value=""/>
-					<expand value=""/>
 					<signal name="/tb/avm_rx_address" aliasid="0"/>
 					<signal name="/tb/avm_rx_burstcount" aliasid="0"/>
 					<signal name="/tb/avm_rx_read" aliasid="0"/>
@@ -118,10 +114,8 @@
 					<signal name="/tb/avm_rx_waitrequest" aliasid="0"/>
 				</group>
 				<viewmode value="namedrow"/>
-				<expand value="1"/>
 				<group name="burst tx bus">
 					<viewmode value=""/>
-					<expand value=""/>
 					<signal name="/tb/avm_tx_address" aliasid="0"/>
 					<signal name="/tb/avm_tx_burstcount" aliasid="0"/>
 					<signal name="/tb/avm_tx_write" aliasid="0"/>
@@ -160,18 +154,76 @@
 					<signal name="/tb/GUI_RUN" aliasid="0"/>
 					<signal name="/tb/CLK_FREQ_MHZ" aliasid="0"/>
 				</group>
+				<integral_representation value=""/>
+				<viewmode value="namedrow"/>
+				<group name="avsvproc">
+					<viewmode value=""/>
+					<signal name="/tb/avsproc_inst/clk" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/rst_n" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/avs_csr_address" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/avs_csr_write" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/avs_csr_writedata" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/avs_csr_read" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/avs_csr_readdata" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/avs_csr_readdatavalid" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/irq" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/update" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/RD" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/RDLast" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/Addr" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/WE" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/DataOut" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/DataIn" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/RDAck" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/avs_read" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/avs_csr_readdatavalid_int" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/avs_csr_readdatavalid_reg" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/NODE_NUM" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/AUTO_VALID_CSR" aliasid="0"/>
+				</group>
+				<viewmode value="namedrow"/>
+				<expand value="1"/>
+				<group name="vproc">
+					<viewmode value=""/>
+					<expand value=""/>
+					<signal name="/tb/avsproc_inst/vproc_inst/Clk" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/vproc_inst/Addr" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/vproc_inst/WE" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/vproc_inst/RD" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/vproc_inst/DataOut" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/vproc_inst/DataIn" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/vproc_inst/WRAck" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/vproc_inst/RDAck" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/vproc_inst/Interrupt" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/vproc_inst/Update" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/vproc_inst/UpdateResponse" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/vproc_inst/Node" aliasid="0"/>
+					<integral_representation value="Hexadecimal"/>
+					<signal name="/tb/avsproc_inst/vproc_inst/VPDataOut" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/vproc_inst/VPAddr" aliasid="0"/>
+					<integral_representation value=""/>
+					<signal name="/tb/avsproc_inst/vproc_inst/VPRW" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/vproc_inst/VPTicks" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/vproc_inst/TickVal" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/vproc_inst/DataInSamp" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/vproc_inst/IntSamp" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/vproc_inst/NodeI" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/vproc_inst/RdAckSamp" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/vproc_inst/WRAckSamp" aliasid="0"/>
+					<signal name="/tb/avsproc_inst/vproc_inst/Initialised" aliasid="0"/>
+				</group>
 			</signalspart>
-			<firstvisiblesignal number="0"/>
+			<firstvisiblesignal number="9"/>
 			<timesynchronization value="1"/>
 			<cursorssynchronization value="1"/>
 			<time beginvisible="0fs" endvisible="0fs"/>
 		</view>
 		<bookmarks/>
-		<time beginvisible="0fs" endvisible="8880ns"/>
+		<time beginvisible="1108900ps" endvisible="1219ns"/>
 		<timeunit name="auto"/>
 		<cursors>
-			<cursor name="Default cursor" id="-1" time="8880ns+2" lock="0" tip="1"/>
-			<active name="Default cursor" time="8880ns+2"/>
+			<cursor name="Default cursor" id="-1" time="36272800ns+3" lock="0" tip="1"/>
+			<active name="Default cursor" time="36272800ns+3"/>
 		</cursors>
 		<hierarchy_depth value="0"/>
 	</waveform>

@@ -25,7 +25,7 @@ MEM_C              = mem.c mem_model.c
 # If no external code directory (e.g. a HAL) set this to local source directory, else set to code directory
 EXTINCLDIR         = ${CURDIR}/src
 
-USRFLAGS           = -I${MEMMODELDIR} -DINCL_VLOG_MEM_MODEL -DHDL_SIM
+USRFLAGS           = -I${MEMMODELDIR} -DINCL_VLOG_MEM_MODEL -DHDL_SIM -DVPROC_PLI_VPI
 
 SIMLOGFILE         = sim.log
 
