@@ -52,6 +52,24 @@ reg            [11:0]             count;
 
 reg            [31:0]             mem [0:4095];
 
+function int isNoise;
+input [7:0] val;
+begin
+  if (val == 8'h0a ||
+      val == 8'h27 ||
+      val == 8'h28 ||
+      val == 8'h29 ||
+      val == 8'h2c ||
+      val == 8'h2f ||
+      val == 8'h5c ||
+      val == 8'h5f ||
+      val == 8'h7c)
+    return 0;
+  else
+    return 1;
+end
+endfunction
+
 // --------------------------------------------------------
 // Signal assignments
 // --------------------------------------------------------
@@ -63,10 +81,10 @@ assign avm_tx_writedata           = ~rnw         ? mem_rd       : 32'hx;
 assign avm_rx_address             = avm_rx_read  ? baseaddr     : 32'hx;
 assign avm_rx_burstcount          = length;
 
-wire [31:0] mem_rd = {mem[memaddr][31:24] == 8'h2e ? 8'h20 : mem[memaddr][31:24],
-                      mem[memaddr][23:16] == 8'h2e ? 8'h20 : mem[memaddr][23:16],
-                      mem[memaddr][15: 8] == 8'h2e ? 8'h20 : mem[memaddr][15: 8],
-                      mem[memaddr][ 7: 0] == 8'h2e ? 8'h20 : mem[memaddr][ 7:0]};
+wire [31:0] mem_rd = {isNoise(mem[memaddr][31:24]) ? 8'h20 : mem[memaddr][31:24],
+                      isNoise(mem[memaddr][23:16]) ? 8'h20 : mem[memaddr][23:16],
+                      isNoise(mem[memaddr][15: 8]) ? 8'h20 : mem[memaddr][15: 8],
+                      isNoise(mem[memaddr][ 7: 0]) ? 8'h20 : mem[memaddr][ 7:0]};
 
 // -------------------------------------------------------
 // Control process

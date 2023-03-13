@@ -16,7 +16,6 @@ public:
     const uint32_t wr_offset = 0x10000000;
     const uint32_t rd_offset = 0x20000000;
     const uint32_t bufsize   = 4096;
-    const uint32_t badchar   = 0x2e;
     const uint32_t filtchar  = 0x20;
     
           uutTest() {};

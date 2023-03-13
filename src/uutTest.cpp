@@ -19,7 +19,7 @@ extern "C" {
 }
 
 // --------------------------------------------------
-// Wait for UUT to
+// Wait for UUT to be idle
 // --------------------------------------------------
 int uutTest::wait_for_uut(const CUutAuto*  pUut)
 {
@@ -64,6 +64,23 @@ int uutTest::wait_for_uut(const CUutAuto*  pUut)
 }
 
 // --------------------------------------------------
+// Function to identify noise characters
+// --------------------------------------------------
+
+bool badchar(int val )
+{
+   return !(val == 0x0a ||
+            val == 0x27 ||
+            val == 0x28 ||
+            val == 0x29 ||
+            val == 0x2c ||
+            val == 0x2f ||
+            val == 0x5c ||
+            val == 0x5f ||
+            val == 0x7c);
+}
+
+// --------------------------------------------------
 // UUT test code
 // --------------------------------------------------
 
@@ -85,14 +102,15 @@ int uutTest::runtest(void)
     // Open test file
     FILE* fp = fopen("testfiles/test.txt", "r");
 
-    // Load  file data directly into memory
+    // Load file data directly into memory
     while ((c = fgetc(fp)) != EOF)
     {
         // Print out file character to console
         VPrint("%c", c & 0xff);
         
         // Generate the expected values, filtering the bad characters
-        expbuf[bdx] = (c == badchar) ? filtchar : c;
+        // with the same algorithm used in the UUT
+        expbuf[bdx] = badchar(c) ? filtchar : c;
         
         // Construct a 32-bit word from the incoming bytes
         word |= (c & 0xff) << (8*(bdx%4));
