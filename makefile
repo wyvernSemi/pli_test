@@ -1,7 +1,7 @@
 ###################################################################
-# Makefile for template testcode in Modelsim
+# Makefile for PLI test bench
 #
-# Copyright (c) 2018 - 2020 Global Inkjet Systems
+# Copyright (c) 2023 Simon Southwell
 #
 ###################################################################
 
