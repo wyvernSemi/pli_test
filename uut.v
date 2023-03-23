@@ -61,8 +61,10 @@ begin
       val == 8'h29 ||
       val == 8'h2c ||
       val == 8'h2f ||
+      val == 8'h3c ||
       val == 8'h5c ||
       val == 8'h5f ||
+      val == 8'h60 ||
       val == 8'h7c)
     return 0;
   else

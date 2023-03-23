@@ -18,6 +18,8 @@ extern "C" {
 #include "mem_model.h"
 }
 
+static const int pausetime = 6;
+
 // --------------------------------------------------
 // Wait for UUT to be idle
 // --------------------------------------------------
@@ -48,7 +50,7 @@ int uutTest::wait_for_uut(const CUutAuto*  pUut)
         // Advance simulation a set period to reduce number of polls
         nsleepSim(sleepWaitNs);
         
-        // Subtract sleep time from timeout
+        // Subtract NUMTESTS time from timeout
         timeoutNs -= sleepWaitNs;
     }
 
@@ -75,9 +77,18 @@ bool badchar(int val )
             val == 0x29 ||
             val == 0x2c ||
             val == 0x2f ||
+            val == 0x3c ||
             val == 0x5c ||
             val == 0x5f ||
+            val == 0x60 ||
             val == 0x7c);
+}
+
+// --------------------------------------------------
+// --------------------------------------------------
+void pausesim()
+{
+    sleep(pausetime);
 }
 
 // --------------------------------------------------
@@ -92,12 +103,15 @@ int uutTest::runtest(void)
     int      bdx   = 0; // index for bytes
     uint32_t word  = 0;
     uint8_t  expbuf [bufsize];
-
+    
     // Create a test bench HAL object
     CTestAuto* pTestBench = new CTestAuto((uint32_t*)(0));
 
     // Extract the UUT HAL
     CUutAuto*  pUut       = pTestBench->pUut;
+    
+    VPrint("\nReading in test file testfile/test.txt and loading directly to memory from offset 0x%08x\n\n", rd_offset); pausesim();
+    VPrint("Displaying data at raw text\n\n", rd_offset);
 
     // Open test file
     FILE* fp = fopen("testfiles/test.txt", "r");
@@ -124,14 +138,18 @@ int uutTest::runtest(void)
         bdx++;
     }
 
-    // Caluclate file lengths (bytes then words rounded up)
+    // Calculate file lengths (bytes then words rounded up)
     int filelen_bytes = bdx;
     int filelen_words = bdx/4 + ((bdx%4) ? 1 : 0);
+    
+    VPrint("\nInstigating a read DMA by the UUT from offset 0x%08x\n\n", rd_offset);
 
     // Instigate a read transfer from UUT
     pUut->pControl->SetLength(filelen_words);
     pUut->pBaseaddr->SetBaseaddr(rd_offset);
     pUut->pControl->SetStartrd(1);
+    
+    VPrint("Waiting for DMA to complete...\n\n"); pausesim();
 
     // Wait for the UUT to finish
     error |= wait_for_uut(pUut);
@@ -139,13 +157,19 @@ int uutTest::runtest(void)
     // If no errors, send processed data back to memory at new location
     if (!error)
     {
+        VPrint("Instigating a write DMA by the UUT to memory at offset 0x%08x\n\n", wr_offset);
+        
         // Intigate a write DMA from UUT to different location
         // (the length won't have changed)
         pUut->pBaseaddr->SetBaseaddr(wr_offset);
         pUut->pControl->SetStartwr(1);
+        
+        VPrint("Waiting for DMA to complete...\n"); pausesim();
 
         // Wait for UUT
         error |= wait_for_uut(pUut);
+        
+        VPrint("\nChecking data and displaying results...\n");
 
         if (!error)
         {
