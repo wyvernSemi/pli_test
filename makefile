@@ -61,7 +61,7 @@ verilog: vproc
 # EXECUTION RULES
 #------------------------------------------------------
 
-run: all
+batch: all
 	@vsim -c ${VSIMFLAGS} -l ${SIMLOGFILE} -do run.do tb
 
 rungui: all
@@ -74,6 +74,7 @@ rungui: all
 autobuild:
 	@${AUTOSCRIPT}
 
+run: rungui
 gui: rungui
 
 sim: run
